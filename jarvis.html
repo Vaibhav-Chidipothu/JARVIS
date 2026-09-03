@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JARVIS</title>
+<link rel="stylesheet" href="jarvis.css">
+</head>
+<body>
+
+<div class="hud-shell">
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="brand">JARVIS<span>PERSONAL ASSISTANT INTERFACE</span></div>
+    <div class="clock-block">
+      <div class="clock-time" id="clockTime">00:00:00</div>
+      <div class="clock-date" id="clockDate">LOADING</div>
+    </div>
+  </header>
+
+  <!-- WEATHER -->
+  <section class="panel weather-panel">
+    <div class="panel-title">LOCAL CONDITIONS</div>
+    <div class="weather-city" id="weatherCity">—</div>
+    <div class="weather-temp" id="weatherTemp">--°</div>
+    <div class="weather-desc" id="weatherDesc">Awaiting uplink…</div>
+    <div class="weather-grid">
+      <div>FEELS LIKE<span id="weatherFeels">--°</span></div>
+      <div>HUMIDITY<span id="weatherHumidity">--%</span></div>
+      <div>WIND<span id="weatherWind">-- km/h</span></div>
+      <div>UPDATED<span id="weatherUpdated">--:--</span></div>
+    </div>
+  </section>
+
+  <!-- CORE: REACTOR / MIC -->
+  <section class="core">
+    <div class="reactor">
+      <img class="reactor-image" src="arc_reactor.png" alt="Arc reactor">
+      <svg viewBox="0 0 240 240">
+        <circle class="ring-outer" cx="120" cy="120" r="118"></circle>
+        <circle class="ring-mid"   cx="120" cy="120" r="100"></circle>
+        <circle class="ring-inner" cx="120" cy="120" r="84"></circle>
+      </svg>
+    </div>
+    <button class="mic-btn" id="micBtn" type="button" aria-pressed="false" aria-label="Toggle voice input">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"></path>
+        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+        <line x1="12" y1="19" x2="12" y2="23"></line>
+        <line x1="8" y1="23" x2="16" y2="23"></line>
+      </svg>
+    </button>
+    <div class="mic-status" id="micStatus">MIC OFF · TAP TO SPEAK</div>
+    <div class="waveform" id="waveform">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span>
+    </div>
+  </section>
+
+  <!-- TRANSCRIPT / CHAT LOG -->
+  <section class="panel log-panel">
+    <div class="panel-title">TRANSCRIPT</div>
+      <div class="log-scroll" id="logScroll">
+        <div class="msg jarvis">
+          <span class="who">JARVIS</span>
+          <span class="body">Hi, my name is Jarvis, your personal assistant. How may I help you?</span>
+        </div>
+      </div>
+    </section>
+
+    <div class="input-bar">
+      <input type="text" id="chatInput" placeholder="Type a command..." autocomplete="off">
+      <button class="send-btn" id="sendBtn" type="button">SEND</button>
+    </div>
+
+    <div class="status-strip left"><span class="dot"></span> LINK: STANDBY</div>
+    <div class="status-strip right">SYS OK <span class="dot"></span></div>
+
+  </div>
+
+  <script src="jarvis.js"></script>
+
+</body>
+</html>
