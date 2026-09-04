@@ -6,6 +6,8 @@ from dotenv import load_dotenv
 from flask import Flask, jsonify, request, send_from_directory
 
 from prompt import AGENT_INSTRUCTION
+from dotenv import load_dotenv
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent
 load_dotenv(BASE_DIR / ".env")
