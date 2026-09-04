@@ -2,11 +2,13 @@ import os
 from pathlib import Path
 
 import requests
+from dotenv import load_dotenv
 from flask import Flask, jsonify, request, send_from_directory
 
 from prompt import AGENT_INSTRUCTION
 
 BASE_DIR = Path(__file__).resolve().parent
+load_dotenv(BASE_DIR / ".env")
 app = Flask(__name__, static_folder=str(BASE_DIR))
 
 
